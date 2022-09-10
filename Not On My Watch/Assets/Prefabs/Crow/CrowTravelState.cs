@@ -10,7 +10,7 @@ public class CrowTravelState : CrowBaseState
         
         //find crop
         //move to crop
-        Debug.Log("Finding crop");
+        //Debug.Log("Finding crop");
     }
     public override void OnCollisionEnter(CrowStateManager crow){
         
