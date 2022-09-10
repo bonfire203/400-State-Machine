@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrowStateManager : MonoBehaviour
+public class CrowStateManager   : MonoBehaviour
 {
     CrowBaseState currentState;
     public CrowFleeingState FleeingState = new CrowFleeingState();
