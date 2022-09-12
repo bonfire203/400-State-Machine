@@ -2,24 +2,24 @@
 ## To protect the most wonderful thing
 ### A GIMM 400 Project Ft. State Machines
 
-##Credits
+## Credits
 
-**Brandon Benoit**
-Project Manager
-Programmer
-Level Designer
+**Brandon Benoit**\
+Project Manager\
+Programmer\
+Level Designer\
 
-**Ben Kang**
-Programmer
+**Ben Kang**\
+Programmer\
 
-**Jasmine Reyes**
-3D Modeler
-Designer
+**Jasmine Reyes**\
+3D Modeler\
+Designer\
 
-**Jessna Rodriguez**
-Programmer
-3D Modeler
+**Jessna Rodriguez**\
+Programmer\
+3D Modeler\
 
-**Zeke Wandeler**
-3D Modeler
-Designer
+**Zeke Wandeler**\
+3D Modeler\
+Designer\
