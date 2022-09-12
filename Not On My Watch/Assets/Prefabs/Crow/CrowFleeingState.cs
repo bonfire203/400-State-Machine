@@ -8,7 +8,7 @@ public class CrowFleeingState : CrowBaseState
     public override void UpdateState(CrowStateManager crow){
         
     }
-    public override void OnCollisionEnter(CrowStateManager crow){
+    public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
         
     }
 }

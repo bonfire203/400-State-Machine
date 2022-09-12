@@ -25,4 +25,8 @@ public class CrowStateManager   : MonoBehaviour
         currentState = state;
         state.EnterState(this);
     }
+
+    void OnCollisionEnter(Collision collision){
+        currentState.OnCollisionEnter(this, collision);
+    }
 }

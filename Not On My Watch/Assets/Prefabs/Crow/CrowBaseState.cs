@@ -6,5 +6,5 @@ public abstract class CrowBaseState
     
     public abstract void UpdateState(CrowStateManager crow);
 
-    public abstract void OnCollisionEnter(CrowStateManager crow);
+    public abstract void OnCollisionEnter(CrowStateManager crow, Collision collision);
 }
