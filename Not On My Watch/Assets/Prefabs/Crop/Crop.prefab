@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 839762702164304574}
   m_Layer: 0
   m_Name: Crop
-  m_TagString: crop
+  m_TagString: corn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

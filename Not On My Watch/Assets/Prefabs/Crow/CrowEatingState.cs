@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class CrowEatingState : CrowBaseState
 {
     public override void EnterState(CrowStateManager crow){
-        Debug.Log("Eating");
         crow.Invoke("EatCrop", 10f);//does not work
     }
     public override void UpdateState(CrowStateManager crow){
@@ -15,7 +14,7 @@ public class CrowEatingState : CrowBaseState
     }
 
     //does not work
-    void EatCrop(){
+    public void EatCrop(){
         //do animation()
         Debug.Log("Eating");
     }
