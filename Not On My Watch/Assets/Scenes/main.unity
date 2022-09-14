@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c2b62c45c03d24f99f39f344eba979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMultiplier: 3000
+  timeMultiplier: 6000
   startHour: 8
   timeText: {fileID: 0}
   sunLight: {fileID: 568628594}

@@ -45,17 +45,28 @@ public class TimeController : MonoBehaviour
     private float maxMoonLightIntensity;
 
     private DateTime currentTime; // keep track of time 
-
+    
     private TimeSpan sunriseTime;
 
     private TimeSpan sunsetTime;
 
+    private bool isDayTime;
+
+
     void Start()
     {
         currentTime = DateTime.Now + TimeSpan.FromHours(startHour); // 
-
         sunriseTime = TimeSpan.FromHours(sunriseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
+        isDayTime = currentTime.TimeOfDay > sunriseTime && currentTime.TimeOfDay < sunsetTime;
+        if (!isDayTime)
+        {
+            doNightTimeStuff();
+        }
+        else
+        {
+            doDayTimeStuff();
+        }
     }
 
     
@@ -64,6 +75,7 @@ public class TimeController : MonoBehaviour
         UpdateTimeofDay();
         RotateSun();
         UpdateLightSettings();
+        detectDayNightChange();
     }
 
     private void UpdateTimeofDay()
@@ -74,30 +86,67 @@ public class TimeController : MonoBehaviour
             timeText.text = currentTime.ToString("HH:mm"); // display the time in 24 hour format
         }
     }
+
+    private void doDayTimeStuff()
+    {
+        Debug.Log("day time");
+    }
+
+    private void doNightTimeStuff()
+    {
+        Debug.Log("night time");
+    }
+
+    private void detectDayNightChange()
+    {
+        bool newlyCalculatedIsDay = currentTime.TimeOfDay > sunriseTime && currentTime.TimeOfDay < sunsetTime;
+        if (newlyCalculatedIsDay != isDayTime)
+        {
+            isDayTime = newlyCalculatedIsDay;
+            if (!isDayTime)
+            {
+                doNightTimeStuff();
+            }
+            else
+            {
+                doDayTimeStuff();
+            }
+        }
+    }
     
     private void RotateSun()
     {
         float sunLightRotation;
         
+        
         if(currentTime.TimeOfDay > sunriseTime && currentTime.TimeOfDay < sunsetTime) // Daytime 
         {
+            // if (!isDayTime)
+            // {
+            //     isDayTime = true;
+            // }
             TimeSpan sunriseToSunsetDuration = CalculateTimeDifference(sunriseTime, sunsetTime); // Calculating the total time between sunrise and sunset
             TimeSpan timeSinceSunrise = CalculateTimeDifference(sunriseTime, currentTime.TimeOfDay); // How much time has passed since sunrise
 
             double percentage = timeSinceSunrise.TotalMinutes / sunriseToSunsetDuration.TotalMinutes; // Calculating the percentage of the day time that has passed 
 
             sunLightRotation = Mathf.Lerp(0, 180, (float)percentage); // set the rotation value to zero at sunrise  
+            
             // Lerp linearly interpolates between two points 
-
         }
         else // Nighttime 
         {
+            // if (isDayTime)
+            // {
+            //     isDayTime = false;
+            // }
             TimeSpan sunsetToSunriseDuration = CalculateTimeDifference(sunsetTime, sunriseTime); // suntset -> sunrise
             TimeSpan timeSinceSunset = CalculateTimeDifference(sunsetTime, currentTime.TimeOfDay); // Time since sunset 
 
             double percentage = timeSinceSunset.TotalMinutes / sunsetToSunriseDuration.TotalMinutes;
 
             sunLightRotation = Mathf.Lerp(180, 360, (float)percentage);
+            
         }
 
         sunLight.transform.rotation = Quaternion.AngleAxis(sunLightRotation, Vector3.right); // rotate around x axis. Alter sun light according to rotation 
@@ -115,6 +164,7 @@ public class TimeController : MonoBehaviour
 
         return difference;
     }
+   
 
     private void UpdateLightSettings()
     {
