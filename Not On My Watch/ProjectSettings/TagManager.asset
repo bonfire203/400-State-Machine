@@ -6,6 +6,7 @@ TagManager:
   tags:
   - crow
   - corn
+  - target
   layers:
   - Default
   - TransparentFX
