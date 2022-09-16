@@ -19,7 +19,7 @@ public class CrowTravelState : CrowBaseState
     public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
         if(collision.gameObject.tag == "corn"){
             //crow.SwitchState(crow.EatingState);
-            Debug.Log("Flee");
+            Debug.Log("EAT");
         }
         if(collision.gameObject.tag == "fl_collision" || collision.gameObject.tag == "hm_collision" || collision.gameObject.tag == "ss_collision")
         {
