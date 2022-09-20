@@ -9,6 +9,8 @@ TagManager:
   - target
   - hm_collision
   - fl_collision
+  - Flashlight
+  - Mirror
   layers:
   - Default
   - TransparentFX
