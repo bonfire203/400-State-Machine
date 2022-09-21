@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10177664, g: 0.0961478, b: 0.14310096, a: 1}
+  m_IndirectSpecularColor: {r: 0.10177651, g: 0.09614768, b: 0.14310077, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1411,6 +1411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649793677737999717, guid: 6b7344d04d685c64484d6013f5f1e5ad,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7344d04d685c64484d6013f5f1e5ad, type: 3}

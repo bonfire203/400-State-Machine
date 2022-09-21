@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimeController : MonoBehaviour
 {
@@ -52,6 +53,8 @@ public class TimeController : MonoBehaviour
 
     private bool isDayTime;
 
+    private int counter = 0;
+
 
     void Start()
     {
@@ -90,11 +93,20 @@ public class TimeController : MonoBehaviour
     private void doDayTimeStuff()
     {
         Debug.Log("day time");
+        counter += 1;
+        if (counter == 3) nDay();
+    }
+
+    private void nDay()
+    {
+        SceneManager.LoadScene("clipboard");
+        Debug.Log("New Scene has been called");
     }
 
     private void doNightTimeStuff()
     {
         Debug.Log("night time");
+        counter += 1;
     }
 
     private void detectDayNightChange()
