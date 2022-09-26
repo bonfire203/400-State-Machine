@@ -52,9 +52,15 @@ public class TimeController : MonoBehaviour
 
     private bool isDayTime;
 
+    private GameObject[] flashlight;
+    private GameObject[] mirror;
+
 
     void Start()
     {
+        mirror = GameObject.FindGameObjectsWithTag("Mirror");
+        flashlight = GameObject.FindGameObjectsWithTag("Flashlight");
+
         currentTime = DateTime.Now + TimeSpan.FromHours(startHour); // 
         sunriseTime = TimeSpan.FromHours(sunriseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
@@ -90,11 +96,35 @@ public class TimeController : MonoBehaviour
     private void doDayTimeStuff()
     {
         Debug.Log("day time");
+
+        //turn mirror on and flashlight off
+        foreach (GameObject m in mirror)
+        {
+            m.transform.GetChild(0).GetComponent<Collider>().enabled = true;
+            m.transform.GetChild(1).GetComponent<Light>().enabled = true;
+        }
+        foreach (GameObject f in flashlight)
+        {
+            f.transform.GetChild(0).GetComponent<Collider>().enabled = false;
+            f.transform.GetChild(1).GetComponent<Light>().enabled = false;
+        }
     }
 
     private void doNightTimeStuff()
     {
         Debug.Log("night time");
+
+        //turn mirror off and flashlight on
+        foreach (GameObject m in mirror)
+        {
+            m.transform.GetChild(0).GetComponent<Collider>().enabled = false;
+            m.transform.GetChild(1).GetComponent<Light>().enabled = false;
+        }
+        foreach (GameObject f in flashlight)
+        {
+            f.transform.GetChild(0).GetComponent<Collider>().enabled = true;
+            f.transform.GetChild(1).GetComponent<Light>().enabled = true;
+        }
     }
 
     private void detectDayNightChange()
