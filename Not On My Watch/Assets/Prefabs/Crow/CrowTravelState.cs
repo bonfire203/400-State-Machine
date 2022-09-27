@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CrowTravelState : CrowBaseState
 {
+    CrowAnimations anim;
     GameObject[] cropArray = new GameObject[] {};
     public float speed = 10f;
     int cropID = 1;
@@ -10,6 +11,7 @@ public class CrowTravelState : CrowBaseState
     public override void EnterState(CrowStateManager crow){
         cropArray = GameObject.FindGameObjectsWithTag("corn");
         cropID = Random.Range(0, cropArray.Length);
+        anim.Fly();
     }
 
     public override void UpdateState(CrowStateManager crow){
