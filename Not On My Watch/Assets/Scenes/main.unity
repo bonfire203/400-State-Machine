@@ -4505,7 +4505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLimit: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 2487577516666688503, guid: 6b7344d04d685c64484d6013f5f1e5ad, type: 3}
 --- !u!4 &1279205530
 Transform:
   m_ObjectHideFlags: 0
@@ -5016,6 +5016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768338545}
   - component: {fileID: 1768338544}
+  - component: {fileID: 1768338546}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -5056,6 +5057,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 76.184, y: 0, z: 0}
+--- !u!114 &1768338546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768338543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555364b4e7de63c4fb1513a22901825a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cornStart: 0
+  cornEnd: 0
 --- !u!1 &1877589035
 GameObject:
   m_ObjectHideFlags: 0
@@ -7295,6 +7310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6519694494826132313, guid: 7985a4cced26dfc41a30c28d29d4fa6e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6519694494826132313, guid: 7985a4cced26dfc41a30c28d29d4fa6e,
         type: 3}
