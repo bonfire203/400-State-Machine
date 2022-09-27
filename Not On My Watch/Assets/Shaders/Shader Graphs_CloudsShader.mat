@@ -24,7 +24,8 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 9901a917f14a8c944b8285d83b21ba1e,
     type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -48,12 +49,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudAlpha: 1.8
+    - _AlphaClip: 0.6
+    - _CloudAlpha: 2
     - _CloudPower: 1
     - _CloudScale: 150
-    - _DistortScale: 60.06
+    - _DistortScale: 57.33
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _VertexOffset: 0.0004
     m_Colors:
     - _CloudColor: {r: 0.7688679, g: 0.835358, b: 1, a: 1}
     - _CloudSpeed: {r: 0.002, g: 0.005, b: 0, a: 0}

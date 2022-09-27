@@ -26,7 +26,7 @@ public class SpawnCropManager : MonoBehaviour
         for(int radius = 0; radius < 6; radius++){
             for(int angle = 10; angle <= nAngle; angle+=10){
                 Vector3 pos = RandomCircle(center, radius + SPAWN_BUFFER, angle);
-                Instantiate(prefab, pos, Quaternion.identity);
+                Instantiate(prefab, pos, Quaternion.Euler( 0, Random.Range( 0, 360 ), 0 ));
             }
         }
     }
