@@ -7,6 +7,10 @@ TagManager:
   - crow
   - corn
   - target
+  - hm_collision
+  - fl_collision
+  - Flashlight
+  - Mirror
   layers:
   - Default
   - TransparentFX
