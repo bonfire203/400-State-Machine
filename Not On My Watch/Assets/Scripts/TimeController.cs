@@ -35,8 +35,7 @@ public class TimeController : MonoBehaviour
     [SerializeField]
     private AnimationCurve lightChangeCurve; // Transition between dayambient and night ambient smoothly 
     
-    [SerializeField]
-    private float maxSunLightIntensity;
+    [SerializeField] private float maxSunLightIntensity;
 
     [SerializeField]
     private Light moonLight;
