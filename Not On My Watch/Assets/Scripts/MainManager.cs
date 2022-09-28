@@ -7,7 +7,8 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance;
 
     public float cornStart;
-    public int cornEnd;
+    public float cornLost;
+    public float cornEnd;
 
     private void Awake(){
         if(Instance != null){
@@ -17,7 +18,8 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         this.cornStart = 20;
-        Debug.Log(this.cornStart);
+        this.cornLost = 0;
+        this.cornEnd = 20;
         DontDestroyOnLoad(gameObject);
     }
 }

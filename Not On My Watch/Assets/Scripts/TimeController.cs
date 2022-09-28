@@ -106,7 +106,7 @@ public class TimeController : MonoBehaviour
 
     private void nDay()
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("Score");
     }
 
     private void detectDayNightChange()
