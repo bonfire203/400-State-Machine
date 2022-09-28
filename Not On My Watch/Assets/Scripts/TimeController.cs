@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class TimeController : MonoBehaviour
 {
@@ -35,7 +37,8 @@ public class TimeController : MonoBehaviour
     [SerializeField]
     private AnimationCurve lightChangeCurve; // Transition between dayambient and night ambient smoothly 
     
-    [SerializeField] private float maxSunLightIntensity;
+    [SerializeField]
+    private float maxSunLightIntensity;
 
     [SerializeField]
     private Light moonLight;
@@ -51,15 +54,11 @@ public class TimeController : MonoBehaviour
 
     private bool isDayTime;
 
-    private GameObject[] flashlight;
-    private GameObject[] mirror;
+    private int counter = 0;
 
 
     void Start()
     {
-        mirror = GameObject.FindGameObjectsWithTag("Mirror");
-        flashlight = GameObject.FindGameObjectsWithTag("Flashlight");
-
         currentTime = DateTime.Now + TimeSpan.FromHours(startHour); // 
         sunriseTime = TimeSpan.FromHours(sunriseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
@@ -95,35 +94,19 @@ public class TimeController : MonoBehaviour
     private void doDayTimeStuff()
     {
         Debug.Log("day time");
-
-        //turn mirror on and flashlight off
-        foreach (GameObject m in mirror)
-        {
-            m.transform.GetChild(0).GetComponent<Collider>().enabled = true;
-            m.transform.GetChild(1).GetComponent<Light>().enabled = true;
-        }
-        foreach (GameObject f in flashlight)
-        {
-            f.transform.GetChild(0).GetComponent<Collider>().enabled = false;
-            f.transform.GetChild(1).GetComponent<Light>().enabled = false;
-        }
+        counter += 1;
+        if(counter == 3) nDay();
     }
 
     private void doNightTimeStuff()
     {
         Debug.Log("night time");
+        counter += 1;
+    }
 
-        //turn mirror off and flashlight on
-        foreach (GameObject m in mirror)
-        {
-            m.transform.GetChild(0).GetComponent<Collider>().enabled = false;
-            m.transform.GetChild(1).GetComponent<Light>().enabled = false;
-        }
-        foreach (GameObject f in flashlight)
-        {
-            f.transform.GetChild(0).GetComponent<Collider>().enabled = true;
-            f.transform.GetChild(1).GetComponent<Light>().enabled = true;
-        }
+    private void nDay()
+    {
+        SceneManager.LoadScene("Test");
     }
 
     private void detectDayNightChange()
