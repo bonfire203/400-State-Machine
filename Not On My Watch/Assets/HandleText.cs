@@ -22,7 +22,7 @@ public class HandleText : MonoBehaviour
     {
         cornStart = MainManager.Instance.cornStart;
         cornLost = MainManager.Instance.cornLost;
-        cornEnd = MainManager.Instance.cornEnd;
+        cornEnd = MainManager.Instance.cornStart - MainManager.Instance.cornLost;
 
         _titleStart.text = "Corn Planted: " + cornStart;
         _titleLost.text = "Corn Eaten: " + cornLost;

@@ -27,10 +27,10 @@ public class SpawnCropManager : MonoBehaviour
             for(int angle = 10; angle <= nAngle; angle+=10){
                 Vector3 pos = RandomCircle(center, radius + SPAWN_BUFFER, angle);
                 Quaternion rot = Quaternion.Euler(0, Random.Range(0f, 270f), 0);;
-                float randomXZ = Random.Range(0f, 3f);
-                float randomY = Random.Range(1f, 3f);
+                float randomXYZ = Random.Range(.85f, 1.25f);
+                
                 GameObject myCrop = Instantiate(prefab, pos, rot);
-                myCrop.transform.localScale = new Vector3(randomXZ, randomY, randomXZ);
+                myCrop.transform.localScale = new Vector3(randomXYZ, randomXYZ, randomXYZ);
             }
         }
     }

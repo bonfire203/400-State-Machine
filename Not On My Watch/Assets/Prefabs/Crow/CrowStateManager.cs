@@ -34,4 +34,9 @@ public class CrowStateManager   : MonoBehaviour
     {
         Destroy(gameObject, 5f);
     }
+
+    public void DestroyCorn(GameObject corn)
+    {
+        Destroy(corn);
+    }
 }
