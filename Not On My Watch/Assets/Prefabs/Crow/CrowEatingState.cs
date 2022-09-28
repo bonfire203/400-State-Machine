@@ -5,8 +5,9 @@ public class CrowEatingState : CrowBaseState
 {
     public CrowAnimations anim = new CrowAnimations();
     public override void EnterState(CrowStateManager crow){
-        crow.Invoke("EatCrop", 10f);
+        //crow.Invoke("EatCrop", 10f);
         Debug.Log("Eating here");
+        crow.CountDown();
         anim.AttackCorn(crow);
     }
     public override void UpdateState(CrowStateManager crow){

@@ -29,4 +29,18 @@ public class CrowStateManager   : MonoBehaviour
     void OnCollisionEnter(Collision collision){
         currentState.OnCollisionEnter(this, collision);
     }
+
+    public string CountDown()
+    {
+        StartCoroutine(DoCountDown());
+        return "";
+    }
+
+    IEnumerator DoCountDown()
+    {
+        Debug.Log("Continue Eating");
+        yield return new WaitForSeconds(5f);
+        currentState = TravelState;
+        currentState.SwitchState(this);
+    }
 }
