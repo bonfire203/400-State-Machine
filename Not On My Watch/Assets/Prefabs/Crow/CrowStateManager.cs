@@ -29,4 +29,9 @@ public class CrowStateManager   : MonoBehaviour
     void OnCollisionEnter(Collision collision){
         currentState.OnCollisionEnter(this, collision);
     }
+
+    public void DestroyCrow()
+    {
+        Destroy(gameObject, 5f);
+    }
 }
