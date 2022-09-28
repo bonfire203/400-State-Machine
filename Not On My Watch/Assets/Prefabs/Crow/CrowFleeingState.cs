@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CrowFleeingState : CrowBaseState
 {
-    CrowAnimations anim;
+    public CrowAnimations anim = new CrowAnimations();
     public override void EnterState(CrowStateManager crow){
         anim.Fly();
     }

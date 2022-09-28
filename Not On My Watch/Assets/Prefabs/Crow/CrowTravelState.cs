@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CrowTravelState : CrowBaseState
 {
-    CrowAnimations anim;
+    public CrowAnimations anim = new CrowAnimations();
     GameObject[] cropArray = new GameObject[] {};
     public float speed = 10f;
     int cropID = 1;
