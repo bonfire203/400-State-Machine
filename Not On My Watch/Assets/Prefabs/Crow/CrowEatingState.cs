@@ -21,7 +21,7 @@ public class CrowEatingState : CrowBaseState
             else
             {
                 //Flee rather than travel
-                crow.SwitchState(crow.TravelState);
+                crow.SwitchState(crow.FleeingState);
                 timeRemaining = 0;
                 timerRunning = false;
             }
