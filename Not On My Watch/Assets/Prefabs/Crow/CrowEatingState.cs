@@ -27,7 +27,7 @@ public class CrowEatingState : CrowBaseState
                 crow.SwitchState(crow.TravelState);
                 timeRemaining = 0;
                 timerRunning = false;
-                MainManager.Instance.cornLost++;
+                //MainManager.Instance.cornLost++;
                 crow.DestroyCorn(eatingCorn);
                 //Destroy(specificcorn)
             }
@@ -42,6 +42,12 @@ public class CrowEatingState : CrowBaseState
         if (collision.gameObject.tag == "hm_collision")
         {
             duration = 3;
+        }
+        if (collision.gameObject.tag == "corn")
+        {
+
+            eatingCorn = collision.gameObject;
+            //Destroy(collision.gameObject);
         }
     }
 

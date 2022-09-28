@@ -28,6 +28,6 @@ public class HandleText : MonoBehaviour
         _titleLost.text = "Corn Eaten: " + cornLost;
         _titleEnd.text = "Corn Harvested: " + cornEnd;
 
-        MainManager.Instance.cornStart = cornEnd;
+        MainManager.Instance.cornStart = cornEnd * 1.5f;
     }
 }
