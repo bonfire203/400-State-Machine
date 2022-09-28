@@ -4,17 +4,22 @@ public class CrowTravelState : CrowBaseState
 {
     public CrowAnimations anim = new CrowAnimations();
     GameObject[] cropArray = new GameObject[] {};
+    GameObject cornChild;
+    GameObject cornStalkChild;
+
     public float speed = 10f;
     int cropID = 1;
     float duration = 3;
 
     public override void EnterState(CrowStateManager crow){
         cropArray = GameObject.FindGameObjectsWithTag("corn");
+        cornStalkChild = cropArray[cropID].transform.GetChild(0).gameObject;
+        cornChild = cornStalkChild.transform.GetChild(0).gameObject;
         cropID = Random.Range(0, cropArray.Length);
     }
 
     public override void UpdateState(CrowStateManager crow){
-        crow.transform.position = Vector3.MoveTowards(crow.transform.position, cropArray[cropID].transform.position, speed * Time.deltaTime);
+        crow.transform.position = Vector3.MoveTowards(crow.transform.position, cornChild.transform.position, speed * Time.deltaTime);
         //animation/ani state 
     }
 
