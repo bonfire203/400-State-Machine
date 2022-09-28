@@ -20,9 +20,10 @@ public class CrowTravelState : CrowBaseState
     }
 
     public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
+        Debug.Log("EAT");
         if(collision.gameObject.tag == "corn"){
-            //crow.SwitchState(crow.EatingState);
-            Debug.Log("EAT");
+            crow.SwitchState(crow.EatingState);
+            
         }
         //The flashlight and slingshot are autoflee
         if(collision.gameObject.tag == "fl_collision" || collision.gameObject.tag == "ss_collision")

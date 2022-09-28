@@ -5,20 +5,25 @@ public class CrowEatingState : CrowBaseState
 {
     CrowAnimations anim;
     public override void EnterState(CrowStateManager crow){
-        crow.Invoke("EatCrop", 10f);
+        //StartCoroutine(EatCrop(5f));
+        crow.CountDown();
         anim.AttackCorn();
+    }
 
-    }
     public override void UpdateState(CrowStateManager crow){
-        //do coroutine or something
+          
     }
+
     public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
         
     }
 
-    //does not work
-    public void EatCrop(){
+    /*IEnumerator EatCrop(float i){
         //do animation()
         Debug.Log("Eating");
-    }
+        yield return new WaitForSeconds(i);
+        StartCoroutine(SpawnCrow());  
+    }*/
+
+
 }
