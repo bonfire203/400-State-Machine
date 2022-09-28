@@ -3,23 +3,31 @@ using System.Collections.Generic;
 
 public class CrowEatingState : CrowBaseState
 {
+    private float timeRemaining = 5;
+    private bool timerRunning = false;
     public CrowAnimations anim = new CrowAnimations();
     public override void EnterState(CrowStateManager crow){
-        //crow.Invoke("EatCrop", 10f);
-        Debug.Log("Eating here");
-        crow.CountDown();
+        timerRunning = true;
         anim.AttackCorn(crow);
     }
     public override void UpdateState(CrowStateManager crow){
         //do coroutine or something
+        if (timerRunning)
+        {
+            if(timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                //Flee rather than travel
+                crow.SwitchState(crow.TravelState);
+                timeRemaining = 0;
+                timerRunning = false;
+            }
+        }
     }
     public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
         
-    }
-
-    //does not work
-    public void EatCrop(){
-        //do animation()
-        Debug.Log("Eating");
     }
 }
