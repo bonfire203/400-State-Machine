@@ -26,7 +26,11 @@ public class SpawnCropManager : MonoBehaviour
         for(int radius = 0; radius < 6; radius++){
             for(int angle = 10; angle <= nAngle; angle+=10){
                 Vector3 pos = RandomCircle(center, radius + SPAWN_BUFFER, angle);
-                Instantiate(prefab, pos, Quaternion.Euler( 0, Random.Range( 0, 360 ), 0 ));
+                Quaternion rot = Quaternion.Euler(0, Random.Range(0f, 270f), 0);;
+                float randomXZ = Random.Range(0f, 3f);
+                float randomY = Random.Range(1f, 3f);
+                GameObject myCrop = Instantiate(prefab, pos, rot);
+                myCrop.transform.localScale = new Vector3(randomXZ, randomY, randomXZ);
             }
         }
     }
@@ -34,9 +38,7 @@ public class SpawnCropManager : MonoBehaviour
     float returnAngle(){
         float cornNum = MainManager.Instance.cornStart;
         float percent = cornNum/MAX_CORN_SPAWN;
-        Debug.Log(percent);
         float actualAngle = percent*360;
-        Debug.Log(actualAngle);
         return actualAngle;
     }
 

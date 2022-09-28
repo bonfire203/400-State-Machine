@@ -8,15 +8,17 @@ public class CrowAnimations : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
-    public void AttackCorn() {
+    public void AttackCorn(CrowStateManager crow) {
         //this one automatically flows into eat
+        Animator anim = crow.GetComponent<Animator>();
         anim.SetTrigger("AttackCorn");
     }
 
-    public void Fly() {
+    public void Fly(CrowStateManager crow) {
+        Animator anim = crow.GetComponent<Animator>();
         anim.SetTrigger("Fly");
     }
 }
