@@ -20,7 +20,10 @@ public class CrowTravelState : CrowBaseState
     }
 
     public override void UpdateState(CrowStateManager crow){
-        crow.transform.position = Vector3.MoveTowards(crow.transform.position, cornChild.transform.position, speed * Time.deltaTime);
+        if(cornChild != null)
+        {
+            crow.transform.position = Vector3.MoveTowards(crow.transform.position, cornChild.transform.position, speed * Time.deltaTime);
+        }
     }
 
     public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
