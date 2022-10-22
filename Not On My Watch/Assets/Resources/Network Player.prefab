@@ -1371,7 +1371,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1253745039160575956}
   - component: {fileID: 1253745039160575957}
-  - component: {fileID: 1253745039160575958}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1412,18 +1411,3 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 1253745038526162563}
   m_RequestedTrackingOriginMode: 0
   m_CameraYOffset: 1.1176
---- !u!114 &1253745039160575958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253745039160575959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 555364b4e7de63c4fb1513a22901825a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cornStart: 0
-  cornLost: 0
-  cornEnd: 0

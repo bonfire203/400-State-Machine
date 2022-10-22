@@ -2843,6 +2843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799a35f1e7a9f84488757181df68543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1535068411
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,6 +4290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2074304505}
+  - component: {fileID: 2074304506}
   m_Layer: 0
   m_Name: -- SCENE MANAGERS --
   m_TagString: Untagged
@@ -4315,6 +4317,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074304506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074304504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555364b4e7de63c4fb1513a22901825a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cornStart: 0
+  cornLost: 0
+  cornEnd: 0
 --- !u!1001 &1494027037605727267
 PrefabInstance:
   m_ObjectHideFlags: 0
