@@ -26,7 +26,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHATEST_ON
-  m_LightmapFlags: 2
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -49,8 +49,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 0.54
-    - _CloudAlpha: 2
+    - _AlphaClip: 0.58
+    - _CloudAlpha: 2.4
     - _CloudPower: 1
     - _CloudScale: 150
     - _DistortScale: 57.33
