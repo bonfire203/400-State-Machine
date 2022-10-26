@@ -12,7 +12,7 @@ public class SpawnCropManager : MonoBehaviour
 
     private Vector3 playerVec = new Vector3(0f,0f,0f);
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         //basically just checking if this is the first instance or not.
         //spawnLimit = MainManager.Instance.cornStart;
