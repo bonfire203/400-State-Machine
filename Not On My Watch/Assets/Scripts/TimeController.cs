@@ -95,7 +95,7 @@ public class TimeController : MonoBehaviour
     {
         Debug.Log("day time");
         counter += 1;
-        if(counter == 3) nDay();
+       // if(counter == 3) nDay();
     }
 
     private void doNightTimeStuff()

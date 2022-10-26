@@ -41620,10 +41620,16 @@ struct MaskableGraphic_tFC5B6BE351C90DE53744DF2A70940242774B361E  : public Graph
 // NetworkPlayerSpawner
 struct NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0  : public MonoBehaviourPunCallbacks_t0B3C6A2FD0A09450A8505ACD42A647F3BCE6D783
 {
-	// UnityEngine.Vector3 NetworkPlayerSpawner::spawnLocation
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___spawnLocation_5;
+	// UnityEngine.Vector3 NetworkPlayerSpawner::p1_spawnLocation
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___p1_spawnLocation_5;
+	// UnityEngine.Vector3 NetworkPlayerSpawner::p2_spawnLocation
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___p2_spawnLocation_6;
+	// UnityEngine.Vector3 NetworkPlayerSpawner::p3_spawnLocation
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___p3_spawnLocation_7;
+	// System.Int32 NetworkPlayerSpawner::count
+	int32_t ___count_8;
 	// UnityEngine.GameObject NetworkPlayerSpawner::spawnedPlayerPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___spawnedPlayerPrefab_6;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___spawnedPlayerPrefab_9;
 };
 
 // UnityEngine.UIElements.PanelRaycaster
@@ -48983,9 +48989,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8523[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8525[6] = 
 {
 	static_cast<int32_t>(offsetof(HandleText_tE2A66415D345D23AE7DC8263583300935042BAFD, ____titleStart_4)),static_cast<int32_t>(offsetof(HandleText_tE2A66415D345D23AE7DC8263583300935042BAFD, ____titleLost_5)),static_cast<int32_t>(offsetof(HandleText_tE2A66415D345D23AE7DC8263583300935042BAFD, ____titleEnd_6)),static_cast<int32_t>(offsetof(HandleText_tE2A66415D345D23AE7DC8263583300935042BAFD, ___cornStart_7)),static_cast<int32_t>(offsetof(HandleText_tE2A66415D345D23AE7DC8263583300935042BAFD, ___cornLost_8)),static_cast<int32_t>(offsetof(HandleText_tE2A66415D345D23AE7DC8263583300935042BAFD, ___cornEnd_9)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8527[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8527[5] = 
 {
-	static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___spawnLocation_5)),static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___spawnedPlayerPrefab_6)),};
+	static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___p1_spawnLocation_5)),static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___p2_spawnLocation_6)),static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___p3_spawnLocation_7)),static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___count_8)),static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___spawnedPlayerPrefab_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8528[1] = 
 {
 	static_cast<int32_t>(offsetof(CrowAnimations_tCEBFF086CEE5FD7ABBA0EA705FA07A5DA8DBEB23, ___anim_4)),};

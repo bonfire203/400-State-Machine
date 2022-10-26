@@ -2688,7 +2688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799a35f1e7a9f84488757181df68543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLocation: {x: 0, y: 0, z: 0}
+  p1_spawnLocation: {x: 0, y: 0, z: 0}
+  p2_spawnLocation: {x: 0, y: 0, z: 2}
+  p3_spawnLocation: {x: -2, y: 0, z: 1}
+  count: 0
 --- !u!1 &1535068411
 GameObject:
   m_ObjectHideFlags: 0

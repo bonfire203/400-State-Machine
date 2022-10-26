@@ -105,8 +105,8 @@ extern void InClassMove__ctor_mCCB245491E711082879C24B7278C3D37F5A5D871 (void);
 extern void MainManager_Awake_m8E45557F0C0188FEBE8E55D08AFDC23E5ED7E150 (void);
 // 0x00000030 System.Void MainManager::.ctor()
 extern void MainManager__ctor_m31069775694F3161D61EAAADF571D1D71653DC3E (void);
-// 0x00000031 System.Void SpawnCropManager::Awake()
-extern void SpawnCropManager_Awake_m4453CE6CEC9E41686AEF2E436BA56F6004FA91F4 (void);
+// 0x00000031 System.Void SpawnCropManager::Start()
+extern void SpawnCropManager_Start_mC3999D5ACD4CC5015A69CFE65DFD9CB2B5567593 (void);
 // 0x00000032 System.Single SpawnCropManager::returnAngle()
 extern void SpawnCropManager_returnAngle_m5C5AB6BE50A472A787420B1F34FACE45068D8B84 (void);
 // 0x00000033 UnityEngine.Vector3 SpawnCropManager::RandomCircle(UnityEngine.Vector3,System.Single,System.Single)
@@ -911,7 +911,7 @@ static Il2CppMethodPointer s_methodPointers[426] =
 	InClassMove__ctor_mCCB245491E711082879C24B7278C3D37F5A5D871,
 	MainManager_Awake_m8E45557F0C0188FEBE8E55D08AFDC23E5ED7E150,
 	MainManager__ctor_m31069775694F3161D61EAAADF571D1D71653DC3E,
-	SpawnCropManager_Awake_m4453CE6CEC9E41686AEF2E436BA56F6004FA91F4,
+	SpawnCropManager_Start_mC3999D5ACD4CC5015A69CFE65DFD9CB2B5567593,
 	SpawnCropManager_returnAngle_m5C5AB6BE50A472A787420B1F34FACE45068D8B84,
 	SpawnCropManager_RandomCircle_m19FDAD96FE9DBCEDE407CED406D2BF1316B305C4,
 	SpawnCropManager__ctor_mD11570E97A9716CB2AC26F8AFC33A4DBB6CBE7EA,
