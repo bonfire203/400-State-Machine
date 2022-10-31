@@ -33,7 +33,7 @@ public class CrowEatingState : CrowBaseState
             }
         }
     }
-    public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
+    public override void OnTriggerEnter(CrowStateManager crow, Collider collision){
         if (collision.gameObject.tag == "fl_collision" || collision.gameObject.tag == "hm_collision")
         {
             Debug.Log("Flee now");

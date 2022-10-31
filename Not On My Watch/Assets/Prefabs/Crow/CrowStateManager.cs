@@ -28,8 +28,8 @@ public class CrowStateManager   : MonoBehaviour
         state.EnterState(this);
     }
 
-    void OnCollisionEnter(Collision collision){
-        currentState.OnCollisionEnter(this, collision);
+    void OnTriggerEnter(Collider other){
+        currentState.OnTriggerEnter(this, other);
     }
 
     public void DestroyCrow()

@@ -12,7 +12,7 @@ public class CrowFleeingState : CrowBaseState
     public override void UpdateState(CrowStateManager crow){
         crow.transform.position = Vector3.MoveTowards(crow.transform.position, targetVector, 2f * Time.deltaTime);
     }
-    public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
+    public override void OnTriggerEnter(CrowStateManager crow, Collider collision){
 
     }
 }

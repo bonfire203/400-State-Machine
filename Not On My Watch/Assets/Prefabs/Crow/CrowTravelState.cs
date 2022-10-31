@@ -26,7 +26,7 @@ public class CrowTravelState : CrowBaseState
         }
     }
 
-    public override void OnCollisionEnter(CrowStateManager crow, Collision collision){
+    public override void OnTriggerEnter(CrowStateManager crow, Collider collision){
         if(collision.gameObject.tag == "corn"){
             crow.SwitchState(crow.EatingState);
         }
