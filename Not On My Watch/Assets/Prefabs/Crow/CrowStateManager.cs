@@ -8,9 +8,11 @@ public class CrowStateManager   : MonoBehaviour
     public CrowFleeingState FleeingState = new CrowFleeingState();
     public CrowEatingState EatingState = new CrowEatingState();
     public CrowTravelState TravelState = new CrowTravelState();
+    public CrowAnimations CrowAnim;
     // Start is called before the first frame update
     void Start()
     {
+        CrowAnim = GetComponent<CrowAnimations>();
         currentState = TravelState;
         currentState.EnterState(this);
     }

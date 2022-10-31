@@ -6,12 +6,12 @@ public class CrowEatingState : CrowBaseState
     private float timeRemaining = 5;
     private bool timerRunning = false;
     float duration = 3;
-    public CrowAnimations anim = new CrowAnimations();
+    //public CrowAnimations anim = new CrowAnimations();
     GameObject eatingCorn;
 
     public override void EnterState(CrowStateManager crow){
         timerRunning = true;
-        anim.AttackCorn(crow);
+        crow.CrowAnim.AttackCorn(crow);
     }
     public override void UpdateState(CrowStateManager crow){
         //do coroutine or something
