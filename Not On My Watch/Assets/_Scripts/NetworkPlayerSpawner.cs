@@ -16,17 +16,17 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         
         if(count == 0)
         {
-            spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player", p1_spawnLocation, transform.rotation);
+            spawnedPlayerPrefab = PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
             count++;
         }
         else if (count == 1)
         {
-            spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player", p2_spawnLocation, transform.rotation);
+            spawnedPlayerPrefab = PhotonNetwork.Instantiate("NetworkP2", p2_spawnLocation, transform.rotation);
             count++;
         }
         else if (count == 2)
         {
-            spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player", p3_spawnLocation, transform.rotation);
+            spawnedPlayerPrefab = PhotonNetwork.Instantiate("NetworkP3", p3_spawnLocation, transform.rotation);
             count++;
         }
     }
