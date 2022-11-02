@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6523936123592170706}
   - component: {fileID: 1570739604}
   - component: {fileID: 1570739602}
-  - component: {fileID: 1570739603}
+  - component: {fileID: 4583818505847500026}
   m_Layer: 0
   m_Name: flashlight
   m_TagString: fl_collision
@@ -237,7 +237,7 @@ MonoBehaviour:
   OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 1570739603}
+  - {fileID: 4583818505847500026}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -293,6 +293,8 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -326,7 +328,7 @@ MonoBehaviour:
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -361,7 +363,10 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &1570739603
+  m_StartingSingleGrabTransformers: []
+  m_StartingMultipleGrabTransformers: []
+  m_AddDefaultGrabTransformers: 1
+--- !u!114 &4583818505847500026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

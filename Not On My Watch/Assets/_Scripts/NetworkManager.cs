@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+
+[System.Serializable]
+public class DefaultRoom
+{
+    public string Name;
+    public int sceneIndex;
+    public int maxPlayer;
+}
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Welcome!");
-        ConnectToServer();
-    }
-
-
-    void ConnectToServer()
+    public List<DefaultRoom> defaultRooms;
+    public GameObject roomUI;
+    public void ConnectToServer()
     {
         Debug.Log("Trying to connect to server...");
         PhotonNetwork.ConnectUsingSettings();
@@ -23,12 +25,30 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected to server!");
         base.OnConnectedToMaster();
+        PhotonNetwork.JoinLobby();
+    }
+
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+        Debug.Log("Joined the lobby");
+        roomUI.SetActive(true);
+    }
+
+    public void InitiliazeRoom(int defaultRoomIndex)
+    {
+        DefaultRoom roomSettings = defaultRooms[defaultRoomIndex];
+
+        //load scene
+        PhotonNetwork.LoadLevel(roomSettings.sceneIndex);
+
+        //Create the room
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 3;
+        roomOptions.MaxPlayers = (byte)roomSettings.maxPlayer;
         roomOptions.IsVisible = true;
         roomOptions.IsOpen = true;
 
-        PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default);
+        PhotonNetwork.JoinOrCreateRoom(roomSettings.Name, roomOptions, TypedLobby.Default);
     }
 
     public override void OnJoinedRoom()
@@ -37,9 +57,31 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+    public override void OnPlayerEnteredRoom(Player other)
     {
-        Debug.Log("New Player has entered the Room!");
-        base.OnPlayerEnteredRoom(newPlayer);
+        Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
+
+
+        //if (PhotonNetwork.IsMasterClient)
+        //{
+        //    Debug.LogFormat("OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
+
+
+        //    InitiliazeRoom(1);
+        //}
+    }
+
+    public override void OnPlayerLeftRoom(Player other)
+    {
+        Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
+
+
+        //if (PhotonNetwork.IsMasterClient)
+        //{
+        //    Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
+
+
+        //    InitiliazeRoom(1);
+        //}
     }
 }

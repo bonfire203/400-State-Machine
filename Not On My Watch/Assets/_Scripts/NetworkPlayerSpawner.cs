@@ -17,17 +17,17 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         if(count == 0)
         {
             spawnedPlayerPrefab = PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
-            count++;
+            count += 1;
         }
         else if (count == 1)
         {
             spawnedPlayerPrefab = PhotonNetwork.Instantiate("NetworkP2", p2_spawnLocation, transform.rotation);
-            count++;
+            count += 1;
         }
         else if (count == 2)
         {
             spawnedPlayerPrefab = PhotonNetwork.Instantiate("NetworkP3", p3_spawnLocation, transform.rotation);
-            count++;
+            count += 1;
         }
     }
 
@@ -35,6 +35,6 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnLeftRoom();
         PhotonNetwork.Destroy(spawnedPlayerPrefab);
-        count--;
+        count -= 1;
     }
 }

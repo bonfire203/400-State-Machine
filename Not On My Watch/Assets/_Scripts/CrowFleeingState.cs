@@ -7,7 +7,7 @@ public class CrowFleeingState : CrowBaseState
     //public CrowAnimations anim = new CrowAnimations();
     public override void EnterState(CrowStateManager crow){
         crow.CrowAnim.Fly(crow);
-        crow.DestroyCrow();
+        crow.DestroyCrow(crow.crowGO);
     }
     public override void UpdateState(CrowStateManager crow){
         crow.transform.position = Vector3.MoveTowards(crow.transform.position, targetVector, 2f * Time.deltaTime);
