@@ -1054,15 +1054,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultRooms:
   - Name: Main
-    sceneIndex: 0
+    sceneIndex: 1
     maxPlayer: 3
   - Name: Alternate (Max 2)
     sceneIndex: 1
     maxPlayer: 2
   - Name: Alternate (Max 4)
-    sceneIndex: 2
+    sceneIndex: 1
     maxPlayer: 4
   roomUI: {fileID: 1661904066}
+  lvlSetup: 0
+  cropSpawn: {fileID: 0}
+  p1_spawnLocation: {x: 0, y: 0, z: 0}
 --- !u!4 &944754596
 Transform:
   m_ObjectHideFlags: 0

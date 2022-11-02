@@ -15,6 +15,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public List<DefaultRoom> defaultRooms;
     public GameObject roomUI;
+    public bool lvlSetup = false;
+    public SpawnCropManager cropSpawn;
+    public Vector3 p1_spawnLocation = new Vector3(0f, 0f, 0f);
+
+    public void Start()
+    {
+        //gameObject.AddComponent<SpawnCropManager>();
+        //cropSpawn = GetComponent<SpawnCropManager>();
+    }
+
     public void ConnectToServer()
     {
         Debug.Log("Trying to connect to server...");
@@ -55,12 +65,20 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined a Room");
         base.OnJoinedRoom();
+
+        //if (!lvlSetup)
+        //{
+        //    cropSpawn.SpawnCrop();
+        //    lvlSetup = true;
+        //}
+
+        
     }
 
     public override void OnPlayerEnteredRoom(Player other)
     {
         Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
-
+        PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
 
         //if (PhotonNetwork.IsMasterClient)
         //{
@@ -74,7 +92,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player other)
     {
         Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
-
+       // PhotonNetwork.Destroy();
 
         //if (PhotonNetwork.IsMasterClient)
         //{

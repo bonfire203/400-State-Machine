@@ -11,21 +11,22 @@ public class SpawnCropManager : MonoBehaviourPunCallbacks
     readonly float MAX_CORN_SPAWN = 216f;
     readonly int SPAWN_BUFFER = 2;
 
+
     private Vector3 playerVec = new Vector3(0f,0f,0f);
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        Invoke("SpawnCrop", 8);
+        //Invoke("SpawnCrop", 8);
     }
 
-    float returnAngle(){
+    public float returnAngle(){
         float cornNum = MainManager.Instance.cornStart;
         float percent = cornNum/MAX_CORN_SPAWN;
         float actualAngle = percent*360;
         return actualAngle;
     }
 
-    Vector3 RandomCircle (Vector3 center, float radius, float angle){
+    public Vector3 RandomCircle (Vector3 center, float radius, float angle){
          Vector3 pos;
          pos.x = center.x + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
          pos.y = center.y;
@@ -33,7 +34,7 @@ public class SpawnCropManager : MonoBehaviourPunCallbacks
          return pos;
     }
 
-    void SpawnCrop()
+    public void SpawnCrop()
     {
 
         //basically just checking if this is the first instance or not.
