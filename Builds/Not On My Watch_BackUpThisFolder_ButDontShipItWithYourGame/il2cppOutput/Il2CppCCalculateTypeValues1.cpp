@@ -2492,6 +2492,8 @@ struct Socket_t1F49472CDA22B581C29A258225ABF3ADA9DED67E;
 struct SortedList_t847331629BA06B518F1B5203BD22B59746EDDBF3;
 // Photon.Pun.Demo.Asteroids.Spaceship
 struct Spaceship_t040253AB919B76ABAC10D50E183469BC9FD3BAC8;
+// SpawnCropManager
+struct SpawnCropManager_t3D47A8589ED22BF196CD1E84416B7E0E49900EDF;
 // SpawnCrowManager
 struct SpawnCrowManager_t948535B8F96430A30F8D5668823D5449D591CF9B;
 // UnityEngine.SphereCollider
@@ -58555,6 +58557,16 @@ struct NetworkManager_t34FC479255EC74DE917E6E400B1430EBE2CCA7CB  : public MonoBe
 	List_1_tFDF50E8D35689561F5CB00106DD668B1C46B6B71* ___defaultRooms_5;
 	// UnityEngine.GameObject NetworkManager::roomUI
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___roomUI_6;
+	// System.Boolean NetworkManager::lvlSetup
+	bool ___lvlSetup_7;
+	// SpawnCropManager NetworkManager::cropSpawn
+	SpawnCropManager_t3D47A8589ED22BF196CD1E84416B7E0E49900EDF* ___cropSpawn_8;
+	// UnityEngine.Vector3 NetworkManager::p1_spawnLocation
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___p1_spawnLocation_9;
+	// UnityEngine.Vector3 NetworkManager::p2_spawnLocation
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___p2_spawnLocation_10;
+	// UnityEngine.Vector3 NetworkManager::p3_spawnLocation
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___p3_spawnLocation_11;
 };
 
 // NetworkPlayerSpawner

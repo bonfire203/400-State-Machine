@@ -17,7 +17,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public GameObject roomUI;
     public bool lvlSetup = false;
     public SpawnCropManager cropSpawn;
-    public Vector3 p1_spawnLocation = new Vector3(0f, 0f, 0f);
+    public Vector3 p1_spawnLocation = new Vector3(1.5f, 0.53f, -0.1f);
+    public Vector3 p2_spawnLocation = new Vector3(0.07f, 0.53f, 1.23f);
+    public Vector3 p3_spawnLocation = new Vector3(1.8f, 0.53f, -0.1f);
 
     public void Start()
     {
@@ -65,6 +67,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined a Room");
         base.OnJoinedRoom();
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 0)
+        {
+            PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
+        }
+        else if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        {
+            PhotonNetwork.Instantiate("NetworkP2", p1_spawnLocation, transform.rotation);
+        }
+        else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            PhotonNetwork.Instantiate("NetworkP3", p1_spawnLocation, transform.rotation);
+        }
 
         //if (!lvlSetup)
         //{
@@ -72,13 +86,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //    lvlSetup = true;
         //}
 
-        
+
     }
 
     public override void OnPlayerEnteredRoom(Player other)
     {
         Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
-        PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
+        
+
 
         //if (PhotonNetwork.IsMasterClient)
         //{
