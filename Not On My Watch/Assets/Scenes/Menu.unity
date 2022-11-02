@@ -1055,17 +1055,19 @@ MonoBehaviour:
   defaultRooms:
   - Name: Main
     sceneIndex: 1
-    maxPlayer: 3
-  - Name: Alternate (Max 2)
+    maxPlayer: 10
+  - Name: Alternate (Max 10)
     sceneIndex: 1
-    maxPlayer: 2
-  - Name: Alternate (Max 4)
+    maxPlayer: 10
+  - Name: Alternate (Max 10)
     sceneIndex: 1
-    maxPlayer: 4
+    maxPlayer: 10
   roomUI: {fileID: 1661904066}
   lvlSetup: 0
   cropSpawn: {fileID: 0}
   p1_spawnLocation: {x: 0, y: 0, z: 0}
+  p2_spawnLocation: {x: 0.07, y: 0.53, z: 1.23}
+  p3_spawnLocation: {x: 1.8, y: 0.53, z: -0.1}
 --- !u!4 &944754596
 Transform:
   m_ObjectHideFlags: 0
@@ -2651,7 +2653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1661904067
 RectTransform:
   m_ObjectHideFlags: 0

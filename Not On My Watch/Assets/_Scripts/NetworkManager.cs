@@ -67,17 +67,26 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined a Room");
         base.OnJoinedRoom();
+        Debug.Log("Starting: " + PhotonNetwork.CurrentRoom.PlayerCount);
         if (PhotonNetwork.CurrentRoom.PlayerCount == 0)
         {
             PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
+            Debug.Log("first player " + PhotonNetwork.CurrentRoom.PlayerCount);
         }
         else if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
             PhotonNetwork.Instantiate("NetworkP2", p1_spawnLocation, transform.rotation);
+            Debug.Log("second player " + PhotonNetwork.CurrentRoom.PlayerCount);
         }
         else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
             PhotonNetwork.Instantiate("NetworkP3", p1_spawnLocation, transform.rotation);
+            Debug.Log("third player " + PhotonNetwork.CurrentRoom.PlayerCount);
+        }
+        else
+        {
+            PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
+            Debug.Log("extra " + PhotonNetwork.CurrentRoom.PlayerCount);
         }
 
         //if (!lvlSetup)
