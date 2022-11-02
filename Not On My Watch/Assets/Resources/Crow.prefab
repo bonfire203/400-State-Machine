@@ -148,6 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048dfa4e1af459c41919a60e38f69894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FleeingState: {fileID: 0}
+  EatingState: {fileID: 0}
+  TravelState: {fileID: 0}
   CrowAnim: {fileID: 0}
   crowGO: {fileID: 0}
 --- !u!54 &543479515162439808

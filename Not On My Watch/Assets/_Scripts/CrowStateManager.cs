@@ -6,15 +6,18 @@ using Photon.Pun;
 public class CrowStateManager : MonoBehaviourPunCallbacks
 {
     CrowBaseState currentState;
-    public CrowFleeingState FleeingState = new CrowFleeingState();
-    public CrowEatingState EatingState = new CrowEatingState();
-    public CrowTravelState TravelState = new CrowTravelState();
+    public CrowFleeingState FleeingState;
+    public CrowEatingState EatingState;
+    public CrowTravelState TravelState;
     public CrowAnimations CrowAnim;
     public GameObject crowGO;
     // Start is called before the first frame update
     void Start()
     {
         CrowAnim = GetComponent<CrowAnimations>();
+        FleeingState = gameObject.AddComponent<CrowFleeingState>();
+        EatingState = gameObject.AddComponent<CrowEatingState>();
+        TravelState = gameObject.AddComponent<CrowTravelState>();
         crowGO = gameObject;
         currentState = TravelState;
         currentState.EnterState(this);
@@ -32,7 +35,7 @@ public class CrowStateManager : MonoBehaviourPunCallbacks
     }
 
     void OnTriggerEnter(Collider other){
-        currentState.OnTriggerEnter(this, other);
+        currentState.OnTriggerEnter(other);
     }
 
     public void DestroyCrow(GameObject crow)
@@ -43,5 +46,16 @@ public class CrowStateManager : MonoBehaviourPunCallbacks
     public void DestroyCorn(GameObject corn)
     {
         PhotonNetwork.Destroy(corn);
+    }
+
+    public IEnumerator Delay(GameObject crow)
+    {
+        yield return new WaitForSeconds(5);
+        DestroyCorn(crow);
+    }
+
+    public void StartDeath(GameObject crow)
+    {
+        StartCoroutine(Delay(crow));
     }
 }

@@ -27,9 +27,13 @@ public class CrowTravelState : CrowBaseState
         }
     }
 
-    public override void OnTriggerEnter(CrowStateManager crow, Collider collision){
-        if(collision.gameObject.tag == "corn"){
+    public override void OnTriggerEnter(Collider collision){
+        CrowStateManager crow = gameObject.GetComponent<CrowStateManager>();
+
+        if (collision.gameObject.tag == "corn"){
+           
             crow.SwitchState(crow.EatingState);
+            //crow.SwitchState(crow.EatingState);
         }
         //The flashlight and slingshot are autoflee
         if(collision.gameObject.tag == "fl_collision" || collision.gameObject.tag == "ss_collision")
@@ -45,18 +49,18 @@ public class CrowTravelState : CrowBaseState
     }
 
     //This is for the mirror, you have to hold the beam on the crow to make it flee
-    public void OnCollisionStay(CrowStateManager crow, Collision collision)
-    {
-        if(collision.gameObject.tag == "hm_collision")
-        {
-            if(duration > 0)
-            {
-                duration -= Time.deltaTime;
-            }
-            else
-            {
-                crow.SwitchState(crow.FleeingState);
-            }
-        }
-    }
+    //public override void OnCollisionStay(CrowStateManager crow, Collider collision)
+    //{
+    //    if(collision.gameObject.tag == "hm_collision")
+    //    {
+    //        if(duration > 0)
+    //        {
+    //            duration -= Time.deltaTime;
+    //        }
+    //        else
+    //        {
+    //            crow.SwitchState(crow.FleeingState);
+    //        }
+    //    }
+    //}
 }

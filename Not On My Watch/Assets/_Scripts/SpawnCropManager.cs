@@ -14,9 +14,9 @@ public class SpawnCropManager : MonoBehaviourPunCallbacks
 
     private Vector3 playerVec = new Vector3(0f,0f,0f);
     // Start is called before the first frame update
-    public void Start()
+    public override void OnJoinedRoom()
     {
-        //Invoke("SpawnCrop", 8);
+        StartCoroutine("SpawnCrop");
     }
 
     public float returnAngle(){
@@ -34,30 +34,33 @@ public class SpawnCropManager : MonoBehaviourPunCallbacks
          return pos;
     }
 
-    public void SpawnCrop()
+    IEnumerator SpawnCrop()
     {
 
         //basically just checking if this is the first instance or not.
         //spawnLimit = MainManager.Instance.cornStart;
-        if (spawnLimit < 1)
+        if (GameObject.FindGameObjectsWithTag("corn").Length > 6)
         {
-            spawnLimit = 5;
+            yield return new WaitUntil(()=>(GameObject.FindGameObjectsWithTag("corn").Length < 6));
         }
+        else {
 
-        //determine everthing radius/angle etc
-        Vector3 center = playerVec;
-        float nAngle = returnAngle();
-        for (int radius = 0; radius < 6; radius++)
-        {
-            for (int angle = 10; angle <= nAngle; angle += 10)
+            //determine everthing radius/angle etc
+            Vector3 center = playerVec;
+            float nAngle = returnAngle();
+            for (int radius = 0; radius < 6; radius++)
             {
-                Vector3 pos = RandomCircle(center, radius + SPAWN_BUFFER, angle);
-                Quaternion rot = Quaternion.Euler(0, Random.Range(0f, 270f), 0); ;
-                float randomXYZ = Random.Range(.85f, 1.25f);
+                for (int angle = 10; angle <= nAngle; angle += 10)
+                {
+                    Vector3 pos = RandomCircle(center, radius + SPAWN_BUFFER, angle);
+                    Quaternion rot = Quaternion.Euler(0, Random.Range(0f, 270f), 0); ;
+                    float randomXYZ = Random.Range(.85f, 1.25f);
 
-                GameObject myCrop = PhotonNetwork.Instantiate("Crop", pos, rot);
-                myCrop.transform.localScale = new Vector3(randomXYZ, randomXYZ, randomXYZ);
+                    GameObject myCrop = PhotonNetwork.Instantiate("Crop", pos, rot);
+                    myCrop.tag = "corn";
+                    myCrop.transform.localScale = new Vector3(randomXYZ, randomXYZ, randomXYZ);
+                }
             }
-        }
-    }
+
+        } }
 }

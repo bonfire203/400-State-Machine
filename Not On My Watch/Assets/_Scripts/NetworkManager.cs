@@ -23,8 +23,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void Start()
     {
-        //gameObject.AddComponent<SpawnCropManager>();
-        //cropSpawn = GetComponent<SpawnCropManager>();
+        gameObject.AddComponent<SpawnCropManager>();
+        cropSpawn = GetComponent<SpawnCropManager>();
     }
 
     public void ConnectToServer()
