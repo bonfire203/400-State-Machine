@@ -11,29 +11,38 @@ public class CrowEatingState : CrowBaseState
     GameObject eatingCorn;
 
     public override void EnterState(CrowStateManager crow){
+
         timerRunning = true;
         crow.CrowAnim.AttackCorn(crow);
     }
     public override void UpdateState(CrowStateManager crow){
         //do coroutine or something
-        if (timerRunning)
+        if(eatingCorn != null)
         {
-            if(timeRemaining > 0)
+            if (timerRunning)
             {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                //Flee rather than travel
-                crow.SwitchState(crow.FleeingState);
-                timeRemaining = 0;
-                timerRunning = false;
-                //MainManager.Instance.cornLost++;
-                crow.crowGO.GetComponent<PhotonView>().RequestOwnership();
-                crow.DestroyCorn(eatingCorn);
-                //Destroy(specificcorn)
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                }
+                else
+                {
+                    //Flee rather than travel
+                    crow.SwitchState(crow.FleeingState);
+                    timeRemaining = 0;
+                    timerRunning = false;
+                    //MainManager.Instance.cornLost++;
+                    crow.crowGO.GetComponent<PhotonView>().RequestOwnership();
+                    crow.DestroyCorn(eatingCorn);
+                    //Destroy(specificcorn)
+                }
             }
         }
+        else
+        {
+            crow.SwitchState(crow.TravelState);
+        }
+        
     }
     public override void OnTriggerEnter( Collider collision){
         CrowStateManager crow = gameObject.GetComponent<CrowStateManager>();

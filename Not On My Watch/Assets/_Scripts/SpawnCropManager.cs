@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class SpawnCropManager : MonoBehaviourPunCallbacks
 {
@@ -16,7 +17,11 @@ public class SpawnCropManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     public override void OnJoinedRoom()
     {
-        StartCoroutine("SpawnCrop");
+        if(SceneManager.GetActiveScene().name == "mainV2")
+        {
+            StartCoroutine("SpawnCrop");
+        }
+        
     }
 
     public float returnAngle(){

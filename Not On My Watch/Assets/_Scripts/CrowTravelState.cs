@@ -25,6 +25,10 @@ public class CrowTravelState : CrowBaseState
         {
             crow.transform.position = Vector3.MoveTowards(crow.transform.position, cornChild.transform.position, speed * Time.deltaTime);
         }
+        else
+        {
+            crow.SwitchState(crow.TravelState);
+        }
     }
 
     public override void OnTriggerEnter(Collider collision){
