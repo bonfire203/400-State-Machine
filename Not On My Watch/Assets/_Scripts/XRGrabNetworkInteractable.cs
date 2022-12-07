@@ -6,6 +6,7 @@ using Photon.Pun;
 public class XRGrabNetworkInteractable : XRGrabInteractable
 {
     private PhotonView photonView;
+    public Material mat;
     void Start(){
         photonView = GetComponent<PhotonView>();
     }
@@ -14,5 +15,11 @@ public class XRGrabNetworkInteractable : XRGrabInteractable
     {
         photonView.RequestOwnership();
         base.OnSelectEntered(args);
+
+        if(this.gameObject.tag == "colorChange")
+        {
+            this.gameObject.GetComponent<MeshRenderer>().material = mat;
+            Debug.Log("Changing Color!");
+        }
     }
 }

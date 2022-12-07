@@ -12,11 +12,12 @@ TagManager:
   - Flashlight
   - Mirror
   - crate
+  - colorChange
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - changeColor
   - Water
   - UI
   - 
