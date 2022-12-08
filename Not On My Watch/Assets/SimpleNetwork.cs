@@ -8,6 +8,7 @@ public class SimpleNetwork : MonoBehaviourPunCallbacks
     public Vector3 p1_spawnLocation = new Vector3(1.5f, 0.53f, -0.1f);
     public Vector3 p2_spawnLocation = new Vector3(0.07f, 0.53f, 1.23f);
     public Vector3 p3_spawnLocation = new Vector3(1.8f, 0.53f, -0.1f);
+    public GameObject prefab;
     public override void OnJoinedRoom()
     {
 
@@ -19,6 +20,7 @@ public class SimpleNetwork : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Instantiate("NetworkP1", p1_spawnLocation, transform.rotation);
             Debug.Log("first player " + PhotonNetwork.CurrentRoom.PlayerCount);
+            PhotonNetwork.Instantiate(prefab.name, new Vector3(0, 1, 2), Quaternion.identity, 0);
         }
         else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
